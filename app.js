@@ -1,9 +1,9 @@
 const createError = require('http-errors');
-const express = require('express');
+const express = require('express-validator');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const wiki = require('./routes/wiki.js');
+
 const dotenv = require('dotenv')
  
 
@@ -13,6 +13,7 @@ dotenv.config({ path: '.env' })
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog');
+const wikiRouter = require('./routes/wiki.js');
 
 const app = express();
 
@@ -37,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalog', catalogRouter);
-app.use('/wiki', wiki);
+app.use('/wiki', wikiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

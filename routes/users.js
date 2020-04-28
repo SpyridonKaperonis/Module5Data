@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express-validator');
 const router = express.Router();
 
 /* GET users listing. */
