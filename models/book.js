@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const BookSchema = new schema({
+const BookSchema = new Schema({
     title: {type: String, required: true},
-    author: {type: schema.ObjectId, ref: 'Author', required: true},
+    author: {type: Schema.ObjectId, ref: 'Author', required: true},
     summary: {type: String, required: true},
     isbn: {type: String, required: true},
-    genre: [{type: schema.ObjectId, ref: 'Genre'}]
+    genre: [{type: Schema.ObjectId, ref: 'Genre'}]
 });
 
 BookSchema.virtual('url').get(function(){

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const moment = require('moment');
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const BookInstanceSchema = new Schema({
-    book: {type: String.ObjectId, ref: 'Book', require: true},
+    book: {type: Schema.ObjectId, ref: 'Book', require: true},
     imprint: {type: String, require: true},
     status: {type: String, require: true, enum: ['Available', 'Maintenance', 'Loaded', 'Reserved'], default: 'Maintenance'},
-    dueBack: {tupe: Date, default: Date.now},
+    dueBack: {type: Date, default: Date.now},
 });
 
 BookInstanceSchema.virtual('url').get(function(){

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const Genreschema = new Schema({
     name: {type: String, require: true, min: 3, max: 100}

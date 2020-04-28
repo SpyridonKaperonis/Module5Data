@@ -6,8 +6,8 @@ const schema = mongoose.Schema;
 const AuthorSchema = new schema({
     firstName: {type: String, required: true, max:100},
     lastName:{type: String, required: true, max: 100},
-    DOB:{type: Data},
-    DOD:{type: Data}
+    DOB:{type: Date },
+    DOD:{type: Date }
 });
 
 AuthorSchema.virtual('name').get(function(){
